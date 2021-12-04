@@ -1,9 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+
+// Require the controller that exports
+// the todo CRUD functions
+const skillsCtrl = require('../controllers/skills');
+
+// All actual paths start with "/skills"
+
+// GET "/skills" - Index Route
+router.get('/', skillsCtrl.index);
+
+
+// GET "/skills/:id" - Show Route
+router.get('/:id', skillsCtrl.show);
+
+
 
 module.exports = router;

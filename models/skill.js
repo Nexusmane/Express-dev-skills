@@ -1,7 +1,7 @@
 const skills = [
-    { id: 125223, skill: "HTML", expert: true },
-    { id: 127904, skill: "Javascript", expert: true },
-    { id: 139608, skill: "CSS", expert: false },
+    { id: 133423, skill: "HTML", expert: true },
+    { id: 155634, skill: "Javascript", expert: true },
+    { id: 188522, skill: "CSS", expert: false },
   ];
   
   module.exports = {
