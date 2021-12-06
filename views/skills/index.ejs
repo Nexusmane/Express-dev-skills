@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Express Dev Skills</title>
-</head>
-<body>
-  <a href="/">Home</a>
-  <a href="/skills">Skills List</a>
+<%- include('../partials/header') %>
+
   <h1>Skills</h1>
-  <ul>
-    <% skills.forEach(function(t) { %>
-      <li>
-        <a href="/skills/<%= t.id %>"><%= t.skill %></a>
-          - 
-        <%= t.expert ? 'Definitely' : 'Not quite' %>
-      </li>
-    <% }); %>
-  </ul>
-</body>
-</html>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Mastered?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% skills.forEach(function(t) { %>
+        <tr>
+          <td><a href="/skills/<%= t.id %>"><%= t.skill %></a></td>
+          <td><%= t.expert ? 'Definitely' : 'Not quite' %></td>
+          <td>
+            <form action="/skills/<%= t.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-danger">X</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <%- include('../partials/footer') %>
+
+
+ 
