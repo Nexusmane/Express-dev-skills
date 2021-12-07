@@ -16,7 +16,7 @@ const skills = [
   }
   
   function getOne(id) {
-    return skills.find(skill => skills.id == id);
+    return skills.find(skill => skill.id == id);
   }
   
   function create(skillObj) {
